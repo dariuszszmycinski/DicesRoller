@@ -17,11 +17,16 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" android:fontFamily="sans-serif-black"
             android:gravity="center" android:id="@+id/rollResult"/>
     <Button
-            android:text="Roll a d6"
+            android:text="Roll"
             android:layout_width="160dp"
             android:layout_height="88dp" android:id="@+id/rollButton"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="164dp"
             app:layout_constraintHorizontal_bias="0.498"/>
+    <Button
+            android:text="d6"
+            android:layout_width="59dp"
+            android:layout_height="75dp" android:id="@+id/diceTypeButton" tools:layout_editor_absoluteY="171dp"
+            tools:layout_editor_absoluteX="62dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,8 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private TextView rollResult;
+    Dice diceType = Dice.D6;
+    Button diceTypeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,21 +18,34 @@ public class MainActivity extends AppCompatActivity {
 
         Button rollButton = findViewById(R.id.rollButton);
         rollResult = findViewById(R.id.rollResult);
+        diceTypeButton = findViewById(R.id.diceTypeButton);
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pressButton();
+                pressRoll();
+            }
+        });
+
+        diceTypeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pressDiceType();
             }
         });
     }
 
-    private void pressButton() {
-        rollResult.setText(String.valueOf(rollD6()));
+    private void pressRoll() {
+        rollResult.setText(String.valueOf(rollDice()));
     }
 
-    private int rollD6() {
+    private void pressDiceType() {
+        diceType = diceType.next();
+        diceTypeButton.setText(String.valueOf(diceType));
+    }
+
+    private int rollDice() {
         int min = 1;
-        int max = 6;
+        int max = diceType.getSides();
         return (int)Math.floor(Math.random() * (max - min + 1) + min);
     }
 }
