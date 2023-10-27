@@ -25,4 +25,8 @@ public enum Dice {
     public Dice next() {
         return vals[(this.ordinal() + 1) % vals.length];
     }
+
+    public Dice prev() {
+        return vals[(this.ordinal() + vals.length-1) % vals.length];
+    }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DicesRoller</string>
     <string name="rollResult">Result</string>
+    <string name="rollHistory"/>
 </resources>
