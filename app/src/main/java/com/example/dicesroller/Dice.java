@@ -22,11 +22,11 @@ public enum Dice {
         return sides;
     }
 
-    public Dice next() {
-        return vals[(this.ordinal() + 1) % vals.length];
+    public Dice next(int range) {
+        return vals[(this.ordinal() + range) % vals.length];
     }
 
-    public Dice prev() {
-        return vals[(this.ordinal() + vals.length-1) % vals.length];
+    public Dice prev(int range) {
+        return vals[(this.ordinal() + vals.length-range) % vals.length];
     }
 }

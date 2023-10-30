@@ -2,4 +2,5 @@
     <string name="app_name">DicesRoller</string>
     <string name="rollResult">Result</string>
     <string name="rollHistory"/>
+    <string name="dicesQuantity">1</string>
 </resources>
