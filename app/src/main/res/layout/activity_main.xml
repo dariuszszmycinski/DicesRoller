@@ -21,15 +21,15 @@
             android:layout_width="80dp"
             android:layout_height="80dp" android:id="@+id/rollButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/diceTypeButton" app:layout_constraintHorizontal_bias="0.186"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="164dp"/>
+            app:layout_constraintStart_toEndOf="@+id/diceTypeButton" app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="168dp"/>
     <Button
             android:text="d6"
             android:layout_width="80dp"
             android:layout_height="80dp" android:id="@+id/diceTypeButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/rollButton" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.356"
             app:layout_constraintVertical_bias="1.0"/>
     <TextView
             android:layout_width="wrap_content"
@@ -43,7 +43,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/diceTypeButton"
             app:layout_constraintTop_toTopOf="@+id/rollButton"
-            app:layout_constraintBottom_toBottomOf="@+id/rollButton" app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintBottom_toBottomOf="@+id/rollButton" app:layout_constraintHorizontal_bias="0.657"
             app:layout_constraintVertical_bias="0.0"/>
+    <Button
+            android:text="@string/rollModificator"
+            android:layout_width="80dp"
+            android:layout_height="80dp" android:id="@+id/modificatorButton"
+            app:layout_constraintStart_toEndOf="@+id/diceTypeButton" android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/rollButton" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/rollButton"
+            app:layout_constraintBottom_toBottomOf="@+id/rollButton" app:layout_constraintVertical_bias="0.0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

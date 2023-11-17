@@ -3,4 +3,5 @@
     <string name="rollResult">Result</string>
     <string name="rollHistory"/>
     <string name="dicesQuantity">1</string>
+    <string name="rollModificator">0</string>
 </resources>
