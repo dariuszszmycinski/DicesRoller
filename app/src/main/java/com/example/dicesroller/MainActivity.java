@@ -30,12 +30,7 @@ public class MainActivity extends AppCompatActivity {
         rollHistory = findViewById(R.id.resultsHistoryLabel);
         dicesQuantity = findViewById(R.id.dicesQuantityButton);
         modificatorButton = findViewById(R.id.modificatorButton);
-        rollButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pressRoll();
-            }
-        });
+        rollButton.setOnClickListener(view -> pressRoll());
 
         diceTypeButton.setOnTouchListener(new View.OnTouchListener() {
             private float mPreviousY;
@@ -147,28 +142,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pressRoll() {
-        rollResult.setText(String.valueOf(rollDice()));
-    }
-
-    private int rollDice() {
-        int qty = Integer.parseInt(String.valueOf(dicesQuantity.getText()));
-        int mod = Integer.parseInt(String.valueOf(modificatorButton.getText()));
-        int min = 1;
-        int max = diceType.getSides();
-        int resultSum = 0;
-        StringBuilder sb = new StringBuilder();
-        sb.append(rollHistory.getText()).append(qty).append(diceType);
-        if (mod>0) sb.append("+").append(mod);
-        if (mod<0) sb.append(mod);
-        sb.append(": ");
-        for (int i = 0; i < qty; i++) {
-            int result = (int) (Math.floor(Math.random() * (max - min + 1) + min));
-            resultSum += result;
-            sb.append(result).append(", ");
-        }
-        resultSum += mod;
-        sb.append("total = ").append(resultSum).append("\n");
-        rollHistory.setText(sb.toString());
-        return resultSum;
+        Roll roll = new Roll(diceType, Integer.parseInt(String.valueOf(dicesQuantity.getText())), Integer.parseInt(String.valueOf(modificatorButton.getText())));
+        rollResult.setText(String.valueOf(roll.rollDice()));
+        String description = rollHistory.getText()+"\n"+roll.getDescription();
+        rollHistory.setText(description);
     }
 }
